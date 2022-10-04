@@ -5,3 +5,9 @@ function mostraNomeCompleto(nome, sobrenome) {
 }
 
 console.log(mostraNomeCompleto('Guilherme ', 'Santos'));
+
+function calculaIMC(peso, altura) {
+    return peso / (altura * altura)
+}
+
+console.log(calculaIMC(80, 1.60))
