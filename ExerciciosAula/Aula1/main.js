@@ -43,3 +43,18 @@ function calculaIMCResultado(peso, altura) {
 }
 
 calculaIMCResultado(65, 1.75)
+
+const estudantes = [
+    {nome: 'Guilherme', nota: '8.5'},
+    {nome: 'Julia', nota: '6.2'},
+    {nome: 'Dênis', nota: '7.1'},
+    {nome: 'Thiago', nota: '7.0'},
+    {nome: 'Eduardo', nota: '5.5'},
+    {nome: 'Paulo', nota: '5.2'}
+]
+
+function estudantesNotasFiltradas() {
+    return estudantes.filter(estudante => estudante.nota >= 7)
+}
+
+console.log(estudantesNotasFiltradas())
