@@ -4,13 +4,9 @@ function mostraNomeCompleto(nome, sobrenome) {
     return nome + sobrenome;
 }
 
-console.log(mostraNomeCompleto('Guilherme ', 'Santos'));
-
 function calculaIMC(peso, altura) {
     return peso / (altura * altura)
 }
-
-console.log(calculaIMC(80, 1.60))
 
 
 function calcNotas(nota1, nota2, nota3) {
@@ -22,7 +18,6 @@ function calcNotas(nota1, nota2, nota3) {
     }
 }
 
-calcNotas(50,80,40);
 
 function calculaIMCResultado(peso, altura) {
     const resultado = peso / (altura * altura)
@@ -42,19 +37,34 @@ function calculaIMCResultado(peso, altura) {
     }
 }
 
-calculaIMCResultado(65, 1.75)
-
 const estudantes = [
-    {nome: 'Guilherme', nota: '8.5'},
-    {nome: 'Julia', nota: '6.2'},
-    {nome: 'Dênis', nota: '7.1'},
-    {nome: 'Thiago', nota: '7.0'},
-    {nome: 'Eduardo', nota: '5.5'},
-    {nome: 'Paulo', nota: '5.2'}
+    {nome: 'Guilherme', nota: '8.5', highlight: false},
+    {nome: 'Julia', nota: '9.5', highlight: false},
+    {nome: 'Dênis', nota: '7.1', highlight: false},
+    {nome: 'Thiago', nota: '7.0', highlight: false},
+    {nome: 'Eduardo', nota: '5.5', highlight: false},
+    {nome: 'Paulo', nota: '5.2', highlight: false}
 ]
 
 function estudantesNotasFiltradas() {
     return estudantes.filter(estudante => estudante.nota >= 7)
 }
 
+function alunoDestaque() {
+    return estudantes.map(estudante => 
+        {
+        if(estudante.nota > 9){
+           estudante.highlight = true
+        }
+    return estudante
+    })
+}
+
+console.log(mostraNomeCompleto('Guilherme ', 'Santos'));
+console.log(calculaIMC(80, 1.60))
+calcNotas(50,80,40);
+calculaIMCResultado(65, 1.75)
 console.log(estudantesNotasFiltradas())
+console.log(alunoDestaque());
+
+
