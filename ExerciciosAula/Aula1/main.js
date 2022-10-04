@@ -23,3 +23,23 @@ function calcNotas(nota1, nota2, nota3) {
 }
 
 calcNotas(50,80,40);
+
+function calculaIMCResultado(peso, altura) {
+    const resultado = peso / (altura * altura)
+
+    if(resultado <= 18.5){
+        console.log("Abaixo do peso!", resultado);
+    } else if(resultado >= 18.6 && resultado <= 24.9) {
+        console.log("Peso ideal!", resultado);
+    } else if(resultado >= 25.0 && resultado <= 29.9){
+        console.log("Levemente acima do peso.", resultado)
+    } else if(resultado >= 30.0 && resultado <= 34.9){
+        console.log("Obesidade grau I", resultado)
+    } else if(resultado >= 35.0 && resultado <= 39.9){
+        console.log("Obesidade severa grau II", resultado)
+    } else if (resultado >= 40.0){
+        console.log("Obesidade mórbida grau III", resultado)
+    }
+}
+
+calculaIMCResultado(65, 1.75)
