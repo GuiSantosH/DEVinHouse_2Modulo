@@ -3,6 +3,7 @@ const app = express()
 const { v4: uuidv4} = require('uuid');
 
 let pizzas = []
+let solicitacoes = []
 
 app.use(express.json())
 
@@ -37,6 +38,37 @@ app.post('/pizzas', (request, response) => {
 
     response.status(201).json(pizza)
 
+})
+
+app.get('/solicitacoes', (request, response) => {
+    response.json(solicitacoes)
+})
+
+
+app.post('/solicitacoes', (request, response) => {
+    const {nome_cliente, 
+        documento_cliente,
+        endereco_cliente,
+        contato_cliente,
+        pagamento_cliente,
+        obs_cliente,
+        pedido_cliente,} = request.body
+
+    const solicitacao = {
+        id: uuidv4(),
+        nome_cliente, 
+        documento_cliente,
+        endereco_cliente,
+        contato_cliente,
+        pagamento_cliente,
+        obs_cliente,
+        pedido_cliente,
+        status: "Em produção"
+    }
+
+    solicitacoes.push(solicitacao)
+
+    response.status(201).json(solicitacao)
 })
 
 app.listen(3333, () => {
