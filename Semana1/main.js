@@ -44,6 +44,13 @@ app.get('/solicitacoes', (request, response) => {
     response.json(solicitacoes)
 })
 
+app.get('/solicitacoes/:id', (request, response) => {
+    const {id} = request.params
+    
+    const solicitacao = solicitacoes.find(solicitacao => solicitacao.id === id)
+
+    return response.json(solicitacao)
+})
 
 app.post('/solicitacoes', (request, response) => {
     const {nome_cliente, 
